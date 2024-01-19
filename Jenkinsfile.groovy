@@ -105,6 +105,12 @@ node() {
       	sh "docker rmi $imageName:${version}-${commitId}"
     	}
 
+	/* Docker - test */
+        stage('DOCKER - check registry'){
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'myregistry_login',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+        sh 'curl -sk --user $USERNAME:$PASSWORD https://13.39.22.226:5000/v2/myapp/tags/list'
+         }
+        }   
   
     } finally {
         sh 'docker rm -f postgres'
