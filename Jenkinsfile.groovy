@@ -76,7 +76,7 @@ node() {
 	print """
      	#################################################
         	BanchName: $branchName
-        	CommitID: $commitId
+        	CommitID: $commitIdLong
         	AppVersion: $version
         	JobNumber: $buildNum
      	#################################################
