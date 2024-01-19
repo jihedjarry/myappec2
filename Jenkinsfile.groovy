@@ -73,10 +73,13 @@ node() {
     	/* Récupération du commitID court */
     	def commitId = commitIdLong.take(7)
 
+	
+
 	print """
      	#################################################
         	BanchName: $branchName
-        	CommitID: $commitIdLong
+        	CommitIDLong: $commitIdLong
+		CommitID: $commitId
         	AppVersion: $version
         	JobNumber: $buildNum
      	#################################################
